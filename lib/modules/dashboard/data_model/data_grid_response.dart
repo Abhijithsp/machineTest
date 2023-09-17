@@ -13,7 +13,7 @@ class DataGridResponse {
     String title;
     String itemId;
     bool active;
-    dynamic date;
+    DateTime? date;
     bool overdue;
     ItemType1? itemType1;
     ItemType1? itemType2;
@@ -40,7 +40,7 @@ class DataGridResponse {
         title: json["title"],
         itemId: json["item_id"],
         active: json["active"],
-        date: json["date"],
+        date: DateTime.tryParse(json["date"] ?? ""),
         overdue: json["overdue"],
         itemType1: json["item_type1"] == null ? null : ItemType1.fromJson(json["item_type1"]),
         itemType2: json["item_type2"] == null ? null : ItemType1.fromJson(json["item_type2"]),
