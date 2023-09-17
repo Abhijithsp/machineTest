@@ -50,7 +50,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   height: double.infinity,
                   child: body(context),
                 )
-              : Center(child: CircularProgressIndicator());
+              :const Center(child:  CircularProgressIndicator());
         },
         buildWhen: (previousState, state) {
           return state is DashboardLoaded;
@@ -85,13 +85,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         DataCell(
                           Text(
                             data.id.toString(),
-                            style: TextStyle(fontSize: 12.0),
+                            style: const TextStyle(fontSize: 12.0),
                           ),
                         ),
                         DataCell(
                           Text(
                             data.itemId.toString(),
-                            style: TextStyle(fontSize: 12.0),
+                            style: const TextStyle(fontSize: 12.0),
                           ),
                         ),
                       ]))
@@ -174,13 +174,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 },
                                 Text(
                                   DateFormat('dd MMM yyyy').format((data.date!)),
-                                  style: TextStyle(fontSize: 12.0),
+                                  style: const TextStyle(fontSize: 12.0),
                                 ),
                               ),
                               DataCell(
                                 Text(
                                   data.active ? 'True' : 'False',
-                                  style: TextStyle(fontSize: 12.0),
+                                  style: const TextStyle(fontSize: 12.0),
                                 ),
                               ),
                               DataCell(Column(
@@ -188,7 +188,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   Row(
                                     children: [
                                       Text(data.itemType1?.value.toString() ?? "0"),
-                                      SizedBox(width: 40,),
+                                      const SizedBox(width: 40,),
                                       Text(data.itemType2?.value.toString() ?? "0")
                                     ],
                                   ),
@@ -199,9 +199,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 children: [
                                   Row(
                                     children: [
-                                      data.level1!.isNotEmpty ? Text(data.level1?[0].value.toString() ?? "0") : Text(""),
-                                      SizedBox(width: 30,),
-                                      data.level2!.isNotEmpty ? Text(data.level2?[0].value.toString() ?? "0") : Text(""),
+                                      data.level1!.isNotEmpty ? Text(data.level1?[0].value.toString() ?? "0") : const Text(""),
+                                      const SizedBox(width: 30,),
+                                      data.level2!.isNotEmpty ? Text(data.level2?[0].value.toString() ?? "0") : const Text(""),
 
                                     ],
                                   ),
